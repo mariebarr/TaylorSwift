@@ -1,0 +1,130 @@
+import java.util.NoSuchElementException;
+//DOUBLY LINKED LIST to hold t swift questions
+public class LL<T>{
+	private Node head;
+	private Node tail;
+	private int size;
+
+	public LL(){
+		size=0;
+	}
+
+	private class Node{
+		T element;
+		Node next;
+		Node prev;
+
+		public Node(T element, Node next, Node prev){
+			this.element=element;
+			this.next=next;
+			this.prev=prev;
+		}
+	}
+
+	public int size(){
+		return size;
+	}
+	public boolean isEmpty(){
+		return size==0;
+	}
+	public void addFirst(T element){
+		//next is head, its prev is null now
+		Node tmp=new Node(element, head, null);
+		//there's stuff in the list already...put the item before the first item
+		if(head!=null){
+			head.prev=tmp;
+			head=tmp;
+		}
+		//list was empty. insert first item
+		else{
+			tail=tmp;
+			head=tmp;
+		}
+		//increment size
+		size++;
+		System.out.println("adding: "+element);
+	}
+	public void addLast(T element){
+		//next is null, prev is tail now
+		Node tmp=new Node(element, null, tail);
+		//if list has stuff in it already...set tail's next to tmp
+		if(tail!=null){
+			tail.next=tmp;
+			tail=tmp;
+		}
+		//if list is empty...set inserted value to head
+		else{
+			head=tmp;
+			tail=tmp;
+		}
+		//increment size
+		size++;
+		System.out.println("adding: "+element);
+	}
+	
+	public void iterateForward(){
+		System.out.println("iterating forward...");
+		Node tmp=head;
+		while(tmp!=null){
+			System.out.println(tmp.element);
+			tmp=tmp.next;
+		}
+	}
+	public void iterateBackward(){
+		System.out.println("iterating backward...");
+		Node tmp=tail;
+		while(tmp!=null){
+			System.out.println(tmp.element);
+			tmp=tmp.prev;
+		}
+	}
+	public T removeFirst(){
+		if(size==0) throw new NoSuchElementException();
+		Node tmp=head;
+		head=head.next;
+		head.prev=null;
+		size--;
+		System.out.println("deleted: "+tmp.element);
+		return tmp.element;
+	}
+	public T removeLast(){
+		if(size==0) throw new NoSuchElementException();
+		Node tmp=tail;
+		tail=tail.prev;
+		tail.next=null;
+		size--;
+		System.out.println("deleted: "+tmp.element);
+		return tmp.element;
+	}
+	public static void main(String a[]){
+		LL<Integer> list=new LL<Integer>();
+		list.addFirst(10);
+		list.addFirst(34);
+		list.addLast(56);
+		list.addLast(364);
+		list.iterateForward();
+	//	list.iterateBackward();
+		list.removeFirst();
+		list.removeLast();
+		list.iterateBackward();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
