@@ -20,6 +20,18 @@ public class LL<T>{
 			this.prev=prev;
 		}
 	}
+	//get Nth element of LL!
+	public T GetNth(int index){
+		Node current=head;
+		int count=0;
+		while(current!=null){
+			if(count==index)
+				return(current.element);
+			count++;
+			current=current.next;
+		}
+	return head.element;	
+	}
 
 	public int size(){
 		return size;
@@ -42,7 +54,7 @@ public class LL<T>{
 		}
 		//increment size
 		size++;
-		System.out.println("adding: "+element);
+	//	System.out.println("adding: "+element);
 	}
 	public void addLast(T element){
 		//next is null, prev is tail now
@@ -59,11 +71,11 @@ public class LL<T>{
 		}
 		//increment size
 		size++;
-		System.out.println("adding: "+element);
+	//	System.out.println("adding: "+element);
 	}
 	
 	public void iterateForward(){
-		System.out.println("iterating forward...");
+	//	System.out.println("iterating forward...");
 		Node tmp=head;
 		while(tmp!=null){
 			System.out.println(tmp.element);
@@ -71,7 +83,7 @@ public class LL<T>{
 		}
 	}
 	public void iterateBackward(){
-		System.out.println("iterating backward...");
+	//	System.out.println("iterating backward...");
 		Node tmp=tail;
 		while(tmp!=null){
 			System.out.println(tmp.element);
@@ -84,7 +96,7 @@ public class LL<T>{
 		head=head.next;
 		head.prev=null;
 		size--;
-		System.out.println("deleted: "+tmp.element);
+	//	System.out.println("deleted: "+tmp.element);
 		return tmp.element;
 	}
 	public T removeLast(){
@@ -93,21 +105,25 @@ public class LL<T>{
 		tail=tail.prev;
 		tail.next=null;
 		size--;
-		System.out.println("deleted: "+tmp.element);
+	//	System.out.println("deleted: "+tmp.element);
 		return tmp.element;
 	}
-	public static void main(String a[]){
-		LL<Integer> list=new LL<Integer>();
-		list.addFirst(10);
+/*	public static void main(String a[]){
+		LL<String> list=new LL<String>();
+		//add questions last always,thus they will be in order.
+		list.addLast("Taylor's family heard: \"All the lonely Starbucks lovers\" in this song.");
+		list.addLast("Bye.");
+		list.iterateForward();
+		//	LL<Integer> list=new LL<Integer>();
+/*		list.addFirst(10);
 		list.addFirst(34);
 		list.addLast(56);
 		list.addLast(364);
 		list.iterateForward();
-	//	list.iterateBackward();
 		list.removeFirst();
 		list.removeLast();
-		list.iterateBackward();
-	}
+		list.iterateBackward();*/
+//	}
 }
 
 
