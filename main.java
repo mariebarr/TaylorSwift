@@ -3,22 +3,20 @@ class main{
 	public static void main(String [] args){
 		System.out.println("Welcome to Taylor Swift Trivia <3.");
 		System.out.println("Enter your names. (This is a 4 player game)");
-		int count=1;
-		Vector<String> vec= new Vector<String>();
-		
-		//user inputs 4 names. stores them in the vector "vec"
-		while(count<=4){
+		Vector<Player> vec=new Vector<Player>();
+		for(int i=0;i<4;i++){
 			Scanner S=new Scanner(System.in);
 			String name=S.nextLine();
-			vec.addElement(name);
-			count++;
+			Player p=new Player();
+			p.set_name(name);
+			p.set_score(0);
+			vec.addElement(p);		
 		}
-		
-		/* prints out the names (checking)
-		Enumeration en=vec.elements();
-		while(en.hasMoreElements())
-			System.out.print(en.nextElement()+" ");
+		/*output names and scores with dis
+		for(int i=0;i<vec.size();i++){
+			System.out.println(vec.elementAt(i).get_name());
+			System.out.println(vec.elementAt(i).get_score());
+		}
 	*/
-
 	}
 }
