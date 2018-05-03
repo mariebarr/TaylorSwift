@@ -38,18 +38,19 @@ class main{
 			//java uses .equals() to check for equality of STRINGS 
 			if(ans.equals("Blank Space")){
 				//megan: add points
-				System.out.println("heyyy.");
+				System.out.println("Correct!");
 			}
-			else System.out.println("no");
+			else System.out.println("Sorry, pass the play to the next player");
 
 		}
 		if(list.GetNth(num-1)==b){
 			System.out.println(b);
 			System.out.println("Choose a letter");
-			Scanner C=new Scanner(System.in);
-			char c=C.next().charAt(0);
-			while(C.hasNext()){
-		//		c=C.next().charAt(0);
+		//	Scanner C=new Scanner(System.in);
+		//	char c=C.next().charAt(0);
+			while(true){
+				Scanner C=new Scanner(System.in);
+				char c=C.next().charAt(0);
 				if(c=='l'){
 					System.out.println("\"I'm laughing with my l _ _ _ _, making forts under covers\".");
 					continue;
@@ -58,8 +59,10 @@ class main{
 					System.out.println("\"I'm laughing with my l o _ _ _,\" .");
 					continue;
 				}
-				C=new Scanner(System.in);
-				c=C.next().charAt(0);
+			//	if(c=='0'){
+			//		System.out.print ln("\
+			//	C=new Scanner(System.in);
+			//	c=C.next().charAt(0);
 			}
 		}
 	}
