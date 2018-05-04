@@ -20,14 +20,20 @@ class main{
 		  System.out.println(vec.elementAt(i).get_score());
 		  }
 		  */
-		Player player1= vec.elementAt(0);
-		Player player2= vec.elementAt(1);
-		Player player3= vec.elementAt(2);
-		Player player4= vec.elementAt(3);
-		
+		//	Player player1= vec.elementAt(0);
+		//	Player player2= vec.elementAt(1);
+		//	Player player3= vec.elementAt(2);
+		//	Player player4= vec.elementAt(3);
 
 
-	//something like this	heap_tester.max_heap(new Player[]{vec});
+
+		//something like this	heap_tester.max_heap(new Player[]{vec});
+
+		//	heapie(player1);
+		//	heapie(player2);
+		//	heapie(player2);
+		//	heapie(player3);
+		//	heapie(player4);
 
 		//System.out.println(player1.get_name());
 		LL<String> list=new LL<String>();
@@ -36,45 +42,73 @@ class main{
 		String b="2. \"I'm laughing with my _ _ _ _ _, making forts under covers\".";
 		list.addLast(a);
 		list.addLast(b);
-		list.iterateForward();
+	/*	list.iterateForward();
 		System.out.println("Which riddle would you like to solve?");
 		Scanner A=new Scanner(System.in);
 		int num=A.nextInt();
+*/
+		int count=0;
+		list.iterateForward();
+		while(true){
+			count++;
 
-		if(list.GetNth(num-1)==a){
-			System.out.println(a);
-			Scanner B=new Scanner(System.in);
-			String ans=B.nextLine();
-			//java uses .equals() to check for equality of STRINGS 
-			if(ans.equals("Blank Space")){
-				//megan: add points
-				System.out.println("Correct!");
+		//	list.iterateForward();
+			System.out.println("Which riddle would you like to solve?");
+			Scanner A=new Scanner(System.in);
+			int num=A.nextInt();
+			if(list.GetNth(num-1).equals(a)){
+				System.out.println(a);
+				Scanner B=new Scanner(System.in);
+				String ans=B.nextLine();
+				//java uses .equals() to check for equality of STRINGS 
+				if(ans.equals("Blank Space")){
+					//megan: add points
+					System.out.println("Correct!");
+					//count++;
+					continue;
+				}
+				else //System.out.println("Sorry, pass the play to the next player");
+				{	//count++;
+					continue;
+				}
+
 			}
-			else System.out.println("Sorry, pass the play to the next player");
-
+			if(list.GetNth(num-1).equals(b)){
+				System.out.println(b);
+				Scanner C=new Scanner(System.in);
+				String ans=C.nextLine();
+				if(ans.equals("lover")){
+					System.out.println("Correct!");
+					//add points
+					//
+				}
+				else //System.out.println("Sorry, pass the play to the next player");
+					continue;
+			}
+			//Line below not working??
+			if(count==5) break;
 		}
-		if(list.GetNth(num-1)==b){
-			System.out.println(b);
-			System.out.println("Choose a letter");
+
+		//		System.out.println("Choose a letter");
 		//	Scanner C=new Scanner(System.in);
 		//	char c=C.next().charAt(0);
-			while(true){
+		/*		while(true){
 				Scanner C=new Scanner(System.in);
 				char c=C.next().charAt(0);
 				if(c=='l'){
-					System.out.println("\"I'm laughing with my l _ _ _ _, making forts under covers\".");
-					continue;
+				System.out.println("\"I'm laughing with my l _ _ _ _, making forts under covers\".");
+				continue;
 				}
 				if(c=='o'){
-					System.out.println("\"I'm laughing with my l o _ _ _,\" .");
-					continue;
+				System.out.println("\"I'm laughing with my l o _ _ _,\" .");
+				continue;
 				}
-			//	if(c=='0'){
-			//		System.out.print ln("\
-			//	C=new Scanner(System.in);
-			//	c=C.next().charAt(0);
-			}
+		//	if(c=='0'){
+		//		System.out.print ln("\
+		//	C=new Scanner(System.in);
+		//	c=C.next().charAt(0);
 		}
+		}*/
 	}
 }
 
