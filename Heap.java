@@ -15,7 +15,7 @@ public Heap() {
 	size = 0; // default constructor
 }
 
-private void heapie( Player p) { //heapie will make heap and organize it 
+public void heapie( Player p) { //heapie will make heap and organize it 
 	int index = size+1;
 
 	while (index>1 && heap[index/2]<p.get_score()) {
@@ -43,7 +43,7 @@ private void heapie( Player p) { //heapie will make heap and organize it
 
 
 
-public static void main(String[] args) {
+/*public static void main(String[] args) {
 
 //Heap heap_tester = new Heap();
 //heap_tester.max_heap(new int [] {2,1,3,56,5}); 
@@ -55,6 +55,7 @@ heapie(player2);
 heapie(player3);
 heapie(player4); 
 
-	}	
+	}
+	*/
 }
 
