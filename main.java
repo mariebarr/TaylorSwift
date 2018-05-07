@@ -20,6 +20,22 @@ class main{
 		  System.out.println(vec.elementAt(i).get_score());
 		  }
 		  */
+		Player player1= vec.elementAt(0);
+		Player player2= vec.elementAt(1);
+		Player player3= vec.elementAt(2);
+		Player player4= vec.elementAt(3);
+
+		//test
+		Heap tester = new Heap();
+		heapie(player1);
+		heapie(player2);
+		heapie(player3);
+		heapie(player4); 
+
+
+	//something like this	heap_tester.max_heap(new Player[]{vec});
+
+		//System.out.println(player1.get_name());
 		LL<String> list=new LL<String>();
 		//add questions last always,thus they will be in order.
 		String a="1. Taylor's family heard: \"All the lonely Starbucks lovers\" in this song.";
