@@ -75,6 +75,11 @@ class main{
 					System.out.println("\"I'm laughing with my l o _ _ _,\" .");
 					continue;
 				}
+	/* For this part you should make a 5 charcter array and fill it with all underscores and when they enter the correct letter 
+	 * just update the array with the correct letter and print the new array out. Also your current if statements assumes theya re guessing letters
+	 * in sequential order while if we do the array method we can let them guess letters further back in the answer */ 
+
+
 			//	if(c=='0'){
 			//		System.out.print ln("\
 			//	C=new Scanner(System.in);
