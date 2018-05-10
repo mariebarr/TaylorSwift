@@ -20,17 +20,50 @@ public class Hash {
 			table[i] = null;
 	}
 
+	public int get_size() {
+		return size;
+	}
+	
+	private int myhash(String x) {//gets hash value for string
+		int hashVal = x.hashCode();
+		hashVal %= table_size;
+		if(hashVal < 0) 
+			hashVal += table_size;
+		return hashVal; 
+	}
 
 
+	public int get_value(String key) {
+		int hash = (myhash(key) % table_size);
+		if (table[hash] == null) 
+			return -1;
 
-
-
-
-
-
-
-
-
+		else {
+			HashEntry entry = table[hash]; 
+			while(entry != null && !entry.key.equals(key)) 
+				entry = entry.next;
+			if(entry == null) 
+				return -1;
+			else return entry.value;
+		}
+	}
+	
+			
+	public void insert(String key, int value) {
+		int hash = (myhash(key) % table_size);
+		if(table[hash] == null) 
+			table[hash] = new HashEntry(key, value);
+		else {
+			HashEntry entry = table[hash]; 
+			while (entry.next != null && !entry.key.equals(key)) 
+				entry = entry.next;
+			if (entry.key.equals(key)) 
+				entry.value = value;
+			else 
+				entry.next = new HashEntry(key, value);
+		}
+		size++;
+	}
 
 
 
