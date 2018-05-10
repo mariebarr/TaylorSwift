@@ -20,6 +20,18 @@ public class LL<T>{
 			this.prev=prev;
 		}
 	}
+	
+	//get size of ll
+	public int GetCount(){
+		int count=0;
+		Node tmp=head;
+		while(tmp!=null){
+			count++;
+			tmp=tmp.next;
+		}
+		return count;
+	}
+	
 	//get Nth element of LL!
 	public T GetNth(int index){
 		Node current=head;
@@ -92,31 +104,45 @@ public class LL<T>{
 	}
 	public T removeFirst(){
 		if(size==0) throw new NoSuchElementException();
-		Node tmp=head;
-		head=head.next;
-		head.prev=null;
+		else if(size==1){
+			head=null;
+			tail=null;
+		}
+		else{
+			Node tmp=head;
+			head=head.next;
+			head.prev=null;
+		}
 		size--;
 	//	System.out.println("deleted: "+tmp.element);
-		return tmp.element;
+		return null;
 	}
 	public T removeLast(){
 		if(size==0) throw new NoSuchElementException();
-		Node tmp=tail;
-		tail=tail.prev;
-		tail.next=null;
+		else if(size==1){
+			head=null;
+			tail=null;
+		}
+		else{
+			Node tmp=tail;
+			tail=tail.prev;
+			tail.next=null;
+		}
 		size--;
 	//	System.out.println("deleted: "+tmp.element);
-		return tmp.element;
+		return null;
 	}
 	public T removeMid(T delete_me){
 		T element=delete_me;
 	//	Node tmp=head;
-		if(head==null)
+	/*	if(head==null)
 			return null;
 		if(head.next==null&&head.element.equals(element)){
 			head=null;
 			tail=null;
-		}
+			size--;
+			return element;
+		}*/
 		Node tmp=head;
 		
 		while(tmp!=null){//&&!tmp.element.equals(element)){
@@ -124,12 +150,16 @@ public class LL<T>{
 			tmp.prev.next=tmp.next;
 			tmp.next.prev=tmp.prev;
 			tmp=null;
+			size--;
 			return element;
+			//return element;
 			}
 			else
 				tmp=tmp.next;
 		}
-			return element;
+//		size--;
+		return element;
+			//size--;
 	}
 
 			
