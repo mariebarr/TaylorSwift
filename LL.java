@@ -108,24 +108,54 @@ public class LL<T>{
 	//	System.out.println("deleted: "+tmp.element);
 		return tmp.element;
 	}
+	public T removeMid(T delete_me){
+		T element=delete_me;
+	//	Node tmp=head;
+		if(head==null)
+			return null;
+		if(head.next==null&&head.element.equals(element)){
+			head=null;
+			tail=null;
+		}
+		Node tmp=head;
+		
+		while(tmp!=null){//&&!tmp.element.equals(element)){
+			if(tmp.element.equals(element)){
+			tmp.prev.next=tmp.next;
+			tmp.next.prev=tmp.prev;
+			tmp=null;
+			return element;
+			}
+			else
+				tmp=tmp.next;
+		}
+			return element;
+	}
+
+			
+
+
 /*	public static void main(String a[]){
-		LL<String> list=new LL<String>();
-		//add questions last always,thus they will be in order.
-		list.addLast("Taylor's family heard: \"All the lonely Starbucks lovers\" in this song.");
-		list.addLast("Bye.");
-		list.iterateForward();
-		//	LL<Integer> list=new LL<Integer>();
-/*		list.addFirst(10);
-		list.addFirst(34);
+	//	LL<String> list=new LL<String>();
+	//	//add questions last always,thus they will be in order.
+	//	list.addLast("Taylor's family heard: \"All the lonely Starbucks lovers\" in this song.");
+	//	list.addLast("Bye.");
+	//	list.iterateForward();
+			LL<Integer> list=new LL<Integer>();
+	//	list.addFirst(10);
+	//	list.addFirst(34);
 		list.addLast(56);
 		list.addLast(364);
+		list.addLast(211);
+		list.addLast(5);
 		list.iterateForward();
-		list.removeFirst();
-		list.removeLast();
-		list.iterateBackward();*/
-//	}
+		list.iterateForward();
+	//	list.removeFirst();
+	//	list.removeLast();
+	//	list.iterateBackward();
+//	}*/
+//}
 }
-
 
 
 

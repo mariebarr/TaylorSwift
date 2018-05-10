@@ -27,39 +27,58 @@ class main{
 
 
 
-		//something like this	heap_tester.max_heap(new Player[]{vec});
-
-		//	heapie(player1);
-		//	heapie(player2);
-		//	heapie(player2);
-		//	heapie(player3);
-		//	heapie(player4);
-
 		//System.out.println(player1.get_name());
+
 		LL<String> list=new LL<String>();
-		//add questions last always,thus they will be in order.
+
+		//categories
+		String t="Trivia";
+		String m="Music";
+		String l="Love Life";
+
+		list.addLast(t);
+		list.addLast(m);
+		list.addLast(l);
+
+		//subcategories
+
+		//trivia
+		LL<String> trivia=new LL<String>();
+		String gamma="1. What is Taylor's middle name?";
+		String alpha="2. What kind of farm did Taylor grow up on?";
+
+		trivia.addLast(gamma);
+		trivia.addLast(alpha);
+
+
+		//music
+		LL<String> music=new LL<String>();
 		String a="1. Taylor's family heard: \"All the lonely Starbucks lovers\" in this song.";
 		String b="2. \"I'm laughing with my _ _ _ _ _, making forts under covers\".";
-		list.addLast(a);
-		list.addLast(b);
-	/*	list.iterateForward();
-		System.out.println("Which riddle would you like to solve?");
-		Scanner A=new Scanner(System.in);
-		int num=A.nextInt();
-*/
+
+		//add questions last always,thus they will be in order.
+		music.addLast(a);
+		music.addLast(b);
+
 		int count=0;
+
+		//print out categories
 		list.iterateForward();
+
 		while(true){
 			count++;
-
-		//	list.iterateForward();
-			System.out.println("Which riddle would you like to solve?");
+			//use A for scanners
+			//ans for answers
+			System.out.println("Which category would you like?");
 			Scanner A=new Scanner(System.in);
-			int num=A.nextInt();
-			if(list.GetNth(num-1).equals(a)){
-				System.out.println(a);
-				Scanner B=new Scanner(System.in);
-				String ans=B.nextLine();
+			String ans=A.nextLine();
+			if(ans.equals(t)){
+
+				trivia.iterateForward();
+				System.out.println("Which riddle would you like to solve?");
+				//have them choose
+				A=new Scanner(System.in);
+				ans=A.nextLine();
 				//java uses .equals() to check for equality of STRINGS 
 				if(ans.equals("Blank Space")){
 					//megan: add points
@@ -73,42 +92,36 @@ class main{
 				}
 
 			}
-			if(list.GetNth(num-1).equals(b)){
-				System.out.println(b);
-				Scanner C=new Scanner(System.in);
-				String ans=C.nextLine();
-				if(ans.equals("lover")){
-					System.out.println("Correct!");
-					//add points
+			if(ans.equals(m)){
+				music.iterateForward();
+				System.out.println("Which riddle would you like to solve?");
+
+				A=new Scanner(System.in);
+				int num=A.nextInt();
+
+				if(num==1){
+					//have user enter answer
+					A=new Scanner(System.in);
+					ans=A.nextLine();
+					if(ans.equals("Blank Space")){
+
+						System.out.println("Correct!");
+						//add points
+					}
+					else{
+						System.out.println("Nope.");
+					}
+					//
 					//
 				}
-				else //System.out.println("Sorry, pass the play to the next player");
-					continue;
+				//else //System.out.println("Sorry, pass the play to the next player");
+				//	continue;
 			}
 			//Line below not working??
-			if(count==5) break;
+			//	if(count==5) break;
 		}
 
-		//		System.out.println("Choose a letter");
-		//	Scanner C=new Scanner(System.in);
-		//	char c=C.next().charAt(0);
-		/*		while(true){
-				Scanner C=new Scanner(System.in);
-				char c=C.next().charAt(0);
-				if(c=='l'){
-				System.out.println("\"I'm laughing with my l _ _ _ _, making forts under covers\".");
-				continue;
-				}
-				if(c=='o'){
-				System.out.println("\"I'm laughing with my l o _ _ _,\" .");
-				continue;
-				}
-		//	if(c=='0'){
-		//		System.out.print ln("\
-		//	C=new Scanner(System.in);
-		//	c=C.next().charAt(0);
-		}
-		}*/
+
 	}
 }
 
