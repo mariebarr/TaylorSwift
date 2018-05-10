@@ -25,8 +25,6 @@ class main{
 		//	Player player3= vec.elementAt(2);
 		//	Player player4= vec.elementAt(3);
 
-
-
 		//System.out.println(player1.get_name());
 
 		LL<String> list=new LL<String>();
@@ -70,19 +68,14 @@ class main{
 		String delta="1. He broke up with Taylor over a 27-second phone call, inspiring \"Forever and Always\"";
 		String phi="2. He co-starred with Taylor in \"Valentine's Day.\"";
 		String epsilon="3. He wrote \"Paper Doll\" about Taylor, singing: \"You’re like twenty-two girls in one\"";
-		//\n And none of them know what they’re runnin’ from\nWas it just too far to fall?\nFor a little paper doll\"";
 
 		lovelife.addLast(delta);
 		lovelife.addLast(phi);
 		lovelife.addLast(epsilon);
 
-		//	int count1=0;
-		//	int count2=0;
-		//	int count3=0;
 
 
 		while(true){
-			//count++;
 			//use A for scanners
 			//ans for answers
 			if(list.GetCount()==0)
@@ -97,8 +90,6 @@ class main{
 
 			//TRIVIA
 			if(ans.equals(t)){
-				//if(trivia.GetCount()==0)
-				//	continue;
 				trivia.iterateForward();
 				System.out.println("\nWhich riddle would you like to solve?");
 
@@ -113,8 +104,8 @@ class main{
 
 					//java uses .equals() to check for equality of STRINGS 
 					if(ans.equals("Alison")){
-						//megan: add points
 						System.out.println("Correct!");
+						//MEGAN: ADD POINTS
 					}
 					else //System.out.println("Sorry, pass the play to the next player");
 					{	
@@ -134,7 +125,6 @@ class main{
 					}
 					else if(beta.equals(music.GetNth(2)))
 						trivia.removeLast();
-					//	continue;
 				}
 				if(num==2){
 					System.out.println("Enter your answer:");
@@ -142,6 +132,7 @@ class main{
 					ans=A.nextLine();
 					if(ans.equals("Christmas Tree")){
 						System.out.println("Correcto.");
+						//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("noo");
@@ -165,6 +156,7 @@ class main{
 					ans=A.nextLine();
 					if(ans.equals("5' 10\"")){
 						System.out.println("Yup. That's kind of creepy you know so much about her..");
+					//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("no.");
@@ -216,7 +208,7 @@ class main{
 					if(ans.equals("Blank Space")){
 
 						System.out.println("Correct!");
-						//add points
+						//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("Nope.");
@@ -235,7 +227,6 @@ class main{
 					}
 					else if(c.equals(music.GetNth(2)))
 						music.removeLast();
-					//	music.removeFirst();
 				}
 				if(num==2){
 					System.out.println("Enter your answer:");
@@ -243,6 +234,7 @@ class main{
 					ans=A.nextLine();
 					if(ans.equals("lover")){
 						System.out.println("Correct.");
+						//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("no.");
@@ -259,7 +251,6 @@ class main{
 					else if(c.equals(music.GetNth(2)))
 						music.removeLast();
 
-					//music.removeMid(music.GetNth(1));
 				}
 				if(num==3){
 					System.out.println("Enter your answer:");
@@ -267,6 +258,7 @@ class main{
 					ans=A.nextLine();
 					if(ans.equals("perfume")){
 						System.out.println("Correct.");
+						//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("No.");
@@ -285,7 +277,6 @@ class main{
 						music.removeLast();
 					}
 
-					//music.removeLast();
 				}
 				if(music.GetCount()==0){
 					if(m.equals(list.GetNth(0)))
@@ -318,6 +309,7 @@ class main{
 					ans=A.nextLine();
 					if(ans.equals("Joe Jonas")){
 						System.out.println("Correct");
+						//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("No.");
@@ -335,7 +327,6 @@ class main{
 					else if(epsilon.equals(lovelife.GetNth(2)))
 						lovelife.removeLast();
 
-					//lovelife.removeFirst();
 				}
 				if(num==2){
 					System.out.println("Enter your answer:");
@@ -343,6 +334,7 @@ class main{
 					ans=A.nextLine();
 					if(ans.equals("Taylor Lautner")){
 						System.out.println("Correct");
+						//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("No.");
@@ -362,7 +354,6 @@ class main{
 						lovelife.removeLast();
 					}
 
-					//lovelife.removeMid(lovelife.GetNth(1));
 				}
 				if(num==3){
 					System.out.println("Enter your answer:");
@@ -370,6 +361,7 @@ class main{
 					ans=A.nextLine();
 					if(ans.equals("John Mayer")){
 						System.out.println("Correct");
+						//MEGAN: ADD POINTS
 					}
 					else{
 						System.out.println("No.");
@@ -390,10 +382,7 @@ class main{
 					else if(epsilon.equals(lovelife.GetNth(2))){
 						lovelife.removeLast();
 					}
-					//lovelife.removeLast();
 
-
-					//	lovelife.removeLast();
 				}
 
 				if(lovelife.GetCount()==0){
@@ -408,16 +397,10 @@ class main{
 					}
 					else if(l.equals(list.GetNth(2)))
 						list.removeLast();
-
 				}
 				continue;
-
 			}
-
 		}//end of while loop
-
-
-	}
-
-}
+	}//end of main
+}//end of class (file)
 
