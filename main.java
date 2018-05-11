@@ -112,7 +112,7 @@ class main{
 					}
 					else //System.out.println("Sorry, pass the play to the next player");
 					{	
-						System.out.println("no.");
+						System.out.println("no. It's Alison.");
 					}
 					if(gamma.equals(trivia.GetNth(0))){
 						trivia.removeFirst();
@@ -139,7 +139,7 @@ class main{
 						vec.elementAt(i).score++;	
 					}
 					else{
-						System.out.println("noo");
+						System.out.println("noo. T'was a Christmas Tree farm.");
 					}
 					if(alpha.equals(trivia.GetNth(0))){
 						trivia.removeFirst();
@@ -164,7 +164,7 @@ class main{
 						vec.elementAt(i).score++;
 					}
 					else{
-						System.out.println("no.");
+						System.out.println("Didn't expect you to get that right. She's 9' 5.");
 					}
 					if(beta.equals(trivia.GetNth(0))){
 						trivia.removeFirst();
@@ -217,7 +217,7 @@ class main{
 						vec.elementAt(i).score++;
 					}
 					else{
-						System.out.println("Nope.");
+						System.out.println("Nope. Taylor won't be writing your name in her Blank Space.");
 					}
 					if(a.equals(music.GetNth(0))){
 						music.removeFirst();
@@ -245,7 +245,7 @@ class main{
 
 					}
 					else{
-						System.out.println("no.");
+						System.out.println("no. It was 'lover'. Not that you'd know.");
 					}
 					if(b.equals(music.GetNth(0))){
 						music.removeFirst();
@@ -270,7 +270,7 @@ class main{
 						vec.elementAt(i).score++;
 					}
 					else{
-						System.out.println("No.");
+						System.out.println("No. The answer was perfume!");
 					}
 					if(c.equals(music.GetNth(0))){
 						music.removeFirst();
@@ -322,7 +322,7 @@ class main{
 						vec.elementAt(i).score++;
 					}
 					else{
-						System.out.println("No.");
+						System.out.println("No. Joe Jonas must be regretting his decisions.");
 					}
 					if(delta.equals(lovelife.GetNth(0))){
 						lovelife.removeFirst();
@@ -348,7 +348,7 @@ class main{
 						vec.elementAt(i).score++;
 					}
 					else{
-						System.out.println("No.");
+						System.out.println("No. Poor Taylor Lautner...sadly got snuffed in Twilight as well.");
 					}
 					if(phi.equals(lovelife.GetNth(0))){
 						lovelife.removeFirst();
@@ -376,7 +376,7 @@ class main{
 						vec.elementAt(i).score++;
 					}
 					else{
-						System.out.println("No.");
+						System.out.println("No. Dear John.. Mayer.");
 					}
 					//handles if it's the first term in any list
 					if(epsilon.equals(lovelife.GetNth(0))){
