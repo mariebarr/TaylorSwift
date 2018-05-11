@@ -76,7 +76,7 @@ class main{
 		lovelife.addLast(epsilon);
 
 		//random 
-		LL<String> random = new LL<String>(); 
+		LL<String> random=new LL<String>(); 
 		String theta = "1. What is Taylor's first cat's name?"; //Meredith
 		String d = "2. Finish the lyric: \"It feels like a perfect night to dress up like _ _ _ _ _ _ _ _.\" "; //hipsters
 		String omega = "3. He pretty obviously inspired Taylor's song \"Style\"."; //Harry Styles
@@ -88,6 +88,7 @@ class main{
 
 
 		for(int i = 0; i < 4; i++){
+			System.out.println("\n" + vec.elementAt(i).name + "'s turn!");
 			for(int j = 0; j < 3; j++){
 				//use A for scanners
 				//ans for answers
@@ -151,11 +152,11 @@ class main{
 						}
 						else if(d.equals(random.GetNth(1))){
 							if(random.GetCount()==3){
-								random.removeMid(random.getNth(1));
+								random.removeMid(random.GetNth(1));
 							}
 							else random.removeLast();
 						}
-						else if(d.equals(random.getNth(2))){
+						else if(d.equals(random.GetNth(2))){
 							random.removeLast();
 						}
 					}
@@ -176,11 +177,11 @@ class main{
 						}
 						else if(omega.equals(random.GetNth(1))){
 							if(random.GetCount()==3){
-								random.removeMid(random.getNth(1));
+								random.removeMid(random.GetNth(1));
 							}
 							else random.removeLast();
 						}
-						else if(omega.equals(random.getNth(2))){
+						else if(omega.equals(random.GetNth(2))){
 							random.removeLast();
 						}
 					}
@@ -289,7 +290,7 @@ class main{
 								trivia.removeMid(trivia.GetNth(1));
 							else trivia.removeLast();
 						}
-						else if(beta.equals(music.GetNth(2)))
+						else if(beta.equals(trivia.GetNth(2)))
 							trivia.removeLast();
 
 
