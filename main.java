@@ -33,10 +33,12 @@ class main{
 		String t="Trivia";
 		String m="Music";
 		String l="Love Life";
+		String r="Random"; 
 
 		list.addLast(t);
 		list.addLast(m);
 		list.addLast(l);
+		list.addLast(r); 
 
 		//subcategories
 
@@ -73,352 +75,466 @@ class main{
 		lovelife.addLast(phi);
 		lovelife.addLast(epsilon);
 
+		//random 
+		LL<String> random = new LL<String>(); 
+		String theta = "1. What is Taylor's first cat's name?"; //Meredith
+		String d = "2. Finish the lyric: \"It feels like a perfect night to dress up like _ _ _ _ _ _ _ _.\" "; //hipsters
+		String omega = "3. He pretty obviously inspired Taylor's song \"Style\"."; //Harry Styles
+
+		random.addLast(theta); 
+		random.addLast(d);
+		random.addLast(omega); 
+
 
 
 		for(int i = 0; i < 4; i++){
 			for(int j = 0; j < 3; j++){
-			//use A for scanners
-			//ans for answers
-			if(list.GetCount()==0)
-				break;
+				//use A for scanners
+				//ans for answers
+				if(list.GetCount()==0)
+					break;
 
-			System.out.println("\n");
-			list.iterateForward();
-			System.out.println("\nChoose a category:");
-			System.out.println("\n");
-			Scanner A=new Scanner(System.in);
-			String ans=A.nextLine();
+				System.out.println("\n");
+				list.iterateForward();
+				System.out.println("\nChoose a category:");
+				System.out.println("\n");
+				Scanner A=new Scanner(System.in);
+				String ans=A.nextLine();
 
-			//TRIVIA
-			if(ans.equals(t)){
-				trivia.iterateForward();
-				System.out.println("\nWhich riddle would you like to solve?");
 
-				//have them choose
-				A=new Scanner(System.in);
-				int num=A.nextInt();
+				if(ans.equals(r)) {
+					random.iterateForward();
+					System.out.println("\nWhich riddle would you like to solve?");
 
-				if(num==1){
-					System.out.println("Enter your answer:");
 					A=new Scanner(System.in);
-					ans=A.nextLine();
+					int num =A.nextInt();
 
-					//java uses .equals() to check for equality of STRINGS 
-					if(ans.equals("Alison")){
-						System.out.println("Correct!");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
-					 
-					}
-					else //System.out.println("Sorry, pass the play to the next player");
-					{	
-						System.out.println("no. It's Alison.");
-					}
-					if(gamma.equals(trivia.GetNth(0))){
-						trivia.removeFirst();
-					}
-					else if(gamma.equals(trivia.GetNth(1))){
-						if(trivia.GetCount()==3){
-							trivia.removeMid(trivia.GetNth(1));
+					if(num==1){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+
+						if(ans.equals("Meredith")){
+							System.out.println("Correct!");
+							vec.elementAt(i).score++;
 						}
+						else {
+							System.out.println("Wrong it's Meredith! Get your TS game together!");
+						}
+						if(theta.equals(random.GetNth(0))){
+							random.removeFirst();
+						}
+						else if(theta.equals(random.GetNth(1))){
+							if(random.GetCount()==3){
+								random.removeMid(random.GetNth(1));
+							}
+							else random.removeLast();
+						}
+						else if(theta.equals(random.GetNth(2))){
+							random.removeLast();
+						}
+					}
+					else if(num == 2){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans = A.nextLine();
 
-						else 
+						if(ans.equals("hipsters")){
+							System.out.println("Good job, god your a hipster");
+							vec.elementAt(i).score++;
+						}
+						else {
+							System.out.println("God your answer is so last year, nice try");
+						}
+						if(d.equals(random.GetNth(0))){
+							random.removeFirst();
+						}
+						else if(d.equals(random.GetNth(1))){
+							if(random.GetCount()==3){
+								random.removeMid(random.getNth(1));
+							}
+							else random.removeLast();
+						}
+						else if(d.equals(random.getNth(2))){
+							random.removeLast();
+						}
+					}
+					else if(num==3){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans = A.nextLine();
+
+						if(ans.equals("Harry Styles")){
+							System.out.println("Wow, you really know your one direction");
+							vec.elementAt(i).score++;
+						}
+						else{
+							System.out.println("Wrong it was Harry Styles, you must be a Jonas Brother's Fan");
+						}
+						if(omega.equals(random.GetNth(0))){
+							random.removeFirst();
+						}
+						else if(omega.equals(random.GetNth(1))){
+							if(random.GetCount()==3){
+								random.removeMid(random.getNth(1));
+							}
+							else random.removeLast();
+						}
+						else if(omega.equals(random.getNth(2))){
+							random.removeLast();
+						}
+					}
+					if(random.GetCount()==0){
+						if(r.equals(list.GetNth(0)))
+							list.removeFirst();
+						else if(r.equals(list.GetNth(1))){
+							if(list.GetCount()==3){
+								list.removeMid(list.GetNth(1));
+							}
+							else
+								list.removeLast();
+						}
+						else if(r.equals(list.GetNth(2)))
+							list.removeLast();
+
+					}
+					continue;
+
+				}
+
+
+
+				//TRIVIA
+				if(ans.equals(t)){
+					trivia.iterateForward();
+					System.out.println("\nWhich riddle would you like to solve?");
+
+					//have them choose
+					A=new Scanner(System.in);
+					int num=A.nextInt();
+
+					if(num==1){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+
+						//java uses .equals() to check for equality of STRINGS 
+						if(ans.equals("Alison")){
+							System.out.println("Correct!");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
+
+						}
+						else //System.out.println("Sorry, pass the play to the next player");
+						{	
+							System.out.println("no. It's Alison.");
+						}
+						if(gamma.equals(trivia.GetNth(0))){
+							trivia.removeFirst();
+						}
+						else if(gamma.equals(trivia.GetNth(1))){
+							if(trivia.GetCount()==3){
+								trivia.removeMid(trivia.GetNth(1));
+							}
+
+							else 
+								trivia.removeLast();
+
+						}
+						else if(beta.equals(music.GetNth(2)))
+							trivia.removeLast();
+					}
+					if(num==2){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("Christmas Tree")){
+							System.out.println("Correcto.");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;	
+						}
+						else{
+							System.out.println("noo. T'was a Christmas Tree farm.");
+						}
+						if(alpha.equals(trivia.GetNth(0))){
+							trivia.removeFirst();
+						}
+						else if(alpha.equals(trivia.GetNth(1))){
+							if(trivia.GetCount()==3)
+								trivia.removeMid(trivia.GetNth(1));
+							else trivia.removeLast();
+						}
+						else if(beta.equals(music.GetNth(2))){
 							trivia.removeLast();
 
-					}
-					else if(beta.equals(music.GetNth(2)))
-						trivia.removeLast();
-				}
-				if(num==2){
-					System.out.println("Enter your answer:");
-					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("Christmas Tree")){
-						System.out.println("Correcto.");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;	
-					}
-					else{
-						System.out.println("noo. T'was a Christmas Tree farm.");
-					}
-					if(alpha.equals(trivia.GetNth(0))){
-						trivia.removeFirst();
-					}
-					else if(alpha.equals(trivia.GetNth(1))){
-						if(trivia.GetCount()==3)
-							trivia.removeMid(trivia.GetNth(1));
-						else trivia.removeLast();
-					}
-					else if(beta.equals(music.GetNth(2))){
-						trivia.removeLast();
-
-					}
-				}
-				if(num==3){
-					System.out.println("Enter your answer as follows: 9' 5\" for 9 feet 5 inches.");
-					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("5' 10\"")){
-						System.out.println("Yup. That's kind of creepy you know so much about her..");
-					//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
-					}
-					else{
-						System.out.println("Didn't expect you to get that right. She's 9' 5.");
-					}
-					if(beta.equals(trivia.GetNth(0))){
-						trivia.removeFirst();
-					}
-					else if(beta.equals(trivia.GetNth(1))){
-						if(trivia.GetCount()==3)
-							trivia.removeMid(trivia.GetNth(1));
-						else trivia.removeLast();
-					}
-					else if(beta.equals(music.GetNth(2)))
-						trivia.removeLast();
-
-
-				}
-				if(trivia.GetCount()==0){
-					if(t.equals(list.GetNth(0)))
-						list.removeFirst();
-					else if(t.equals(list.GetNth(1))){
-						if(list.GetCount()==3){
-							list.removeMid(list.GetNth(1));
 						}
-						else
+					}
+					if(num==3){
+						System.out.println("Enter your answer as follows: 9' 5\" for 9 feet 5 inches.");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("5' 10\"")){
+							System.out.println("Yup. That's kind of creepy you know so much about her..");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
+						}
+						else{
+							System.out.println("Didn't expect you to get that right. She's 9' 5.");
+						}
+						if(beta.equals(trivia.GetNth(0))){
+							trivia.removeFirst();
+						}
+						else if(beta.equals(trivia.GetNth(1))){
+							if(trivia.GetCount()==3)
+								trivia.removeMid(trivia.GetNth(1));
+							else trivia.removeLast();
+						}
+						else if(beta.equals(music.GetNth(2)))
+							trivia.removeLast();
+
+
+					}
+
+					if(trivia.GetCount()==0){
+						if(t.equals(list.GetNth(0)))
+							list.removeFirst();
+						else if(t.equals(list.GetNth(1))){
+							if(list.GetCount()==3){
+								list.removeMid(list.GetNth(1));
+							}
+							else
+								list.removeLast();
+						}
+						else if(t.equals(list.GetNth(2)))
+							list.removeLast();
+
+					}
+					continue;
+
+				}
+
+				//MUSIC
+				if(ans.equals(m)){
+					music.iterateForward();
+					System.out.println("\nWhich riddle would you like to solve?");
+
+					A=new Scanner(System.in);
+					int num=A.nextInt();
+
+					if(num==1){
+						//have user enter answer
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("Blank Space")){
+
+							System.out.println("Correct!");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
+						}
+						else{
+							System.out.println("Nope. Taylor won't be writing your name in her Blank Space.");
+						}
+						if(a.equals(music.GetNth(0))){
+							music.removeFirst();
+						}
+						else if(a.equals(music.GetNth(1))){
+
+							if(music.GetCount()==3)
+
+								music.removeMid(music.GetNth(1));
+
+							else
+								music.removeLast();
+						}
+						else if(c.equals(music.GetNth(2)))
+							music.removeLast();
+					}
+					if(num==2){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("lover")){
+							System.out.println("Correct.");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
+
+						}
+						else{
+							System.out.println("no. It was 'lover'. Not that you'd know.");
+						}
+						if(b.equals(music.GetNth(0))){
+							music.removeFirst();
+						}
+						else if(b.equals(music.GetNth(1))){
+							if(music.GetCount()==2)
+								music.removeLast();
+							else
+								music.removeMid(music.GetNth(1));
+						}
+						else if(c.equals(music.GetNth(2)))
+							music.removeLast();
+
+					}
+					if(num==3){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("perfume")){
+							System.out.println("Correct.");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
+						}
+						else{
+							System.out.println("No. The answer was perfume!");
+						}
+						if(c.equals(music.GetNth(0))){
+							music.removeFirst();
+						}
+						else if(c.equals(music.GetNth(1))){
+							if(music.GetCount()==3){
+								music.removeMid(music.GetNth(1));
+							}
+							else
+								music.removeLast();
+						}
+						else if(c.equals(music.GetNth(2))){
+							music.removeLast();
+						}
+
+					}
+					if(music.GetCount()==0){
+						if(m.equals(list.GetNth(0)))
+							list.removeFirst();
+						else if(m.equals(list.GetNth(1))){
+							if(list.GetCount()==3){
+								list.removeMid(list.GetNth(1));
+							}
+							else
+								list.removeLast();
+						}
+						else if(m.equals(list.GetNth(2)))
 							list.removeLast();
 					}
-					else if(t.equals(list.GetNth(2)))
-						list.removeLast();
-
+					continue;
 				}
-				continue;
 
-			}
+				//LOVELIFE
+				if(ans.equals(l)){
+					lovelife.iterateForward();
+					System.out.println("\nWhich riddle would you like to solve?");
 
-			//MUSIC
-			if(ans.equals(m)){
-				music.iterateForward();
-				System.out.println("\nWhich riddle would you like to solve?");
-
-				A=new Scanner(System.in);
-				int num=A.nextInt();
-
-				if(num==1){
-					//have user enter answer
-					System.out.println("Enter your answer:");
 					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("Blank Space")){
+					int num=A.nextInt();
 
-						System.out.println("Correct!");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
-					}
-					else{
-						System.out.println("Nope. Taylor won't be writing your name in her Blank Space.");
-					}
-					if(a.equals(music.GetNth(0))){
-						music.removeFirst();
-					}
-					else if(a.equals(music.GetNth(1))){
-
-						if(music.GetCount()==3)
-
-							music.removeMid(music.GetNth(1));
-
-						else
-							music.removeLast();
-					}
-					else if(c.equals(music.GetNth(2)))
-						music.removeLast();
-				}
-				if(num==2){
-					System.out.println("Enter your answer:");
-					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("lover")){
-						System.out.println("Correct.");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
-
-					}
-					else{
-						System.out.println("no. It was 'lover'. Not that you'd know.");
-					}
-					if(b.equals(music.GetNth(0))){
-						music.removeFirst();
-					}
-					else if(b.equals(music.GetNth(1))){
-						if(music.GetCount()==2)
-							music.removeLast();
-						else
-							music.removeMid(music.GetNth(1));
-					}
-					else if(c.equals(music.GetNth(2)))
-						music.removeLast();
-
-				}
-				if(num==3){
-					System.out.println("Enter your answer:");
-					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("perfume")){
-						System.out.println("Correct.");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
-					}
-					else{
-						System.out.println("No. The answer was perfume!");
-					}
-					if(c.equals(music.GetNth(0))){
-						music.removeFirst();
-					}
-					else if(c.equals(music.GetNth(1))){
-						if(music.GetCount()==3){
-							music.removeMid(music.GetNth(1));
+					if(num==1){
+						//have user enter answer
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("Joe Jonas")){
+							System.out.println("Correct");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
 						}
-						else
-							music.removeLast();
-					}
-					else if(c.equals(music.GetNth(2))){
-						music.removeLast();
-					}
-
-				}
-				if(music.GetCount()==0){
-					if(m.equals(list.GetNth(0)))
-						list.removeFirst();
-					else if(m.equals(list.GetNth(1))){
-						if(list.GetCount()==3){
-							list.removeMid(list.GetNth(1));
+						else{
+							System.out.println("No. Joe Jonas must be regretting his decisions.");
 						}
-						else
-							list.removeLast();
-					}
-					else if(m.equals(list.GetNth(2)))
-						list.removeLast();
-				}
-				continue;
-			}
-
-			//LOVELIFE
-			if(ans.equals(l)){
-				lovelife.iterateForward();
-				System.out.println("\nWhich riddle would you like to solve?");
-
-				A=new Scanner(System.in);
-				int num=A.nextInt();
-
-				if(num==1){
-					//have user enter answer
-					System.out.println("Enter your answer:");
-					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("Joe Jonas")){
-						System.out.println("Correct");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
-					}
-					else{
-						System.out.println("No. Joe Jonas must be regretting his decisions.");
-					}
-					if(delta.equals(lovelife.GetNth(0))){
-						lovelife.removeFirst();
-					}
-					else if(delta.equals(lovelife.GetNth(1))){
-						if(lovelife.GetCount()==3){
-							lovelife.removeMid(lovelife.GetNth(1));
+						if(delta.equals(lovelife.GetNth(0))){
+							lovelife.removeFirst();
 						}
-						else
+						else if(delta.equals(lovelife.GetNth(1))){
+							if(lovelife.GetCount()==3){
+								lovelife.removeMid(lovelife.GetNth(1));
+							}
+							else
+								lovelife.removeLast();
+						}
+						else if(epsilon.equals(lovelife.GetNth(2)))
 							lovelife.removeLast();
-					}
-					else if(epsilon.equals(lovelife.GetNth(2)))
-						lovelife.removeLast();
 
-				}
-				if(num==2){
-					System.out.println("Enter your answer:");
-					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("Taylor Lautner")){
-						System.out.println("Correct");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
 					}
-					else{
-						System.out.println("No. Poor Taylor Lautner...sadly got snuffed in Twilight as well.");
-					}
-					if(phi.equals(lovelife.GetNth(0))){
-						lovelife.removeFirst();
-					}
-					else if(phi.equals(lovelife.GetNth(1))){
-						if(lovelife.GetCount()==3){
-							lovelife.removeMid(lovelife.GetNth(1));
+					if(num==2){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("Taylor Lautner")){
+							System.out.println("Correct");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
+						}
+						else{
+							System.out.println("No. Poor Taylor Lautner...sadly got snuffed in Twilight as well.");
+						}
+						if(phi.equals(lovelife.GetNth(0))){
+							lovelife.removeFirst();
+						}
+						else if(phi.equals(lovelife.GetNth(1))){
+							if(lovelife.GetCount()==3){
+								lovelife.removeMid(lovelife.GetNth(1));
+							}
+
+
+							else lovelife.removeLast();
+						}
+						else if(epsilon.equals(lovelife.GetNth(2))){
+							lovelife.removeLast();
 						}
 
-
-						else lovelife.removeLast();
 					}
-					else if(epsilon.equals(lovelife.GetNth(2))){
-						lovelife.removeLast();
-					}
-
-				}
-				if(num==3){
-					System.out.println("Enter your answer:");
-					A=new Scanner(System.in);
-					ans=A.nextLine();
-					if(ans.equals("John Mayer")){
-						System.out.println("Correct");
-						//MEGAN: ADD POINTS
-						vec.elementAt(i).score++;
-					}
-					else{
-						System.out.println("No. Dear John.. Mayer.");
-					}
-					//handles if it's the first term in any list
-					if(epsilon.equals(lovelife.GetNth(0))){
-						lovelife.removeFirst();
-					}
-					//handles if it's the second term in a list of three
-					else if(epsilon.equals(lovelife.GetNth(1))){
-						if(lovelife.GetCount()==3){
-							lovelife.removeMid(lovelife.GetNth(1));
+					if(num==3){
+						System.out.println("Enter your answer:");
+						A=new Scanner(System.in);
+						ans=A.nextLine();
+						if(ans.equals("John Mayer")){
+							System.out.println("Correct");
+							//MEGAN: ADD POINTS
+							vec.elementAt(i).score++;
 						}
-						//removes last element in list of 2
-						else lovelife.removeLast();
-					}
-					//deletes third element from list of 3	
-					else if(epsilon.equals(lovelife.GetNth(2))){
-						lovelife.removeLast();
-					}
-
-				}
-
-				if(lovelife.GetCount()==0){
-					if(l.equals(list.GetNth(0)))
-						list.removeFirst();
-					else if(l.equals(list.GetNth(1))){
-						if(list.GetCount()==3){
-							list.removeMid(list.GetNth(1));
+						else{
+							System.out.println("No. Dear John.. Mayer.");
 						}
-						else
+						//handles if it's the first term in any list
+						if(epsilon.equals(lovelife.GetNth(0))){
+							lovelife.removeFirst();
+						}
+						//handles if it's the second term in a list of three
+						else if(epsilon.equals(lovelife.GetNth(1))){
+							if(lovelife.GetCount()==3){
+								lovelife.removeMid(lovelife.GetNth(1));
+							}
+							//removes last element in list of 2
+							else lovelife.removeLast();
+						}
+						//deletes third element from list of 3	
+						else if(epsilon.equals(lovelife.GetNth(2))){
+							lovelife.removeLast();
+						}
+
+					}
+
+					if(lovelife.GetCount()==0){
+						if(l.equals(list.GetNth(0)))
+							list.removeFirst();
+						else if(l.equals(list.GetNth(1))){
+							if(list.GetCount()==3){
+								list.removeMid(list.GetNth(1));
+							}
+							else
+								list.removeLast();
+						}
+						else if(l.equals(list.GetNth(2)))
 							list.removeLast();
 					}
-					else if(l.equals(list.GetNth(2)))
-						list.removeLast();
+					continue;
 				}
-				continue;
-			}
 			}//end of for loop of 3
 		}//end of for for loop of 4
-	Hash H = new Hash();
-	vec.copyInto(H.table1);
-	Player wins = new Player();
-	wins = H.first_place();
-	System.out.println(wins.name);
+		Hash H = new Hash();
+		vec.copyInto(H.table1);
+		Player wins = new Player();
+		wins = H.first_place();
+		System.out.println(wins.name);
 	}//end of main
 }//end of class (file)
 
