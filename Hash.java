@@ -24,7 +24,7 @@ public class Hash {
 		return size;
 	}
 	
-	private int myhash(String x) {//gets hash value for string
+	private int myhash(String x) {//gives hash value for string
 		int hashVal = x.hashCode();
 		hashVal %= table_size;
 		if(hashVal < 0) 
@@ -33,7 +33,7 @@ public class Hash {
 	}
 
 
-	public int get_value(String key) {
+	public int get_value(String key) { // gets value of a key
 		int hash = (myhash(key) % table_size);
 		if (table[hash] == null) 
 			return -1;
@@ -65,7 +65,14 @@ public class Hash {
 		size++;
 	}
 
+public HashEntry first_place() {
+	HashEntry winner = new HashEntry(); 
+	for (HashEntry name: table ) {
+		if (name.value > winner.value) winner = name; 
 
+	}
+	return winner; 
+}
 
 
 }
