@@ -75,7 +75,8 @@ class main{
 
 
 
-		while(true){
+		for(int i = 0; i < 4; i++){
+			for(int j = 0; j < 3; j++){
 			//use A for scanners
 			//ans for answers
 			if(list.GetCount()==0)
@@ -106,6 +107,8 @@ class main{
 					if(ans.equals("Alison")){
 						System.out.println("Correct!");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
+					 
 					}
 					else //System.out.println("Sorry, pass the play to the next player");
 					{	
@@ -133,6 +136,7 @@ class main{
 					if(ans.equals("Christmas Tree")){
 						System.out.println("Correcto.");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;	
 					}
 					else{
 						System.out.println("noo");
@@ -157,6 +161,7 @@ class main{
 					if(ans.equals("5' 10\"")){
 						System.out.println("Yup. That's kind of creepy you know so much about her..");
 					//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
 					}
 					else{
 						System.out.println("no.");
@@ -209,6 +214,7 @@ class main{
 
 						System.out.println("Correct!");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
 					}
 					else{
 						System.out.println("Nope.");
@@ -235,6 +241,8 @@ class main{
 					if(ans.equals("lover")){
 						System.out.println("Correct.");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
+
 					}
 					else{
 						System.out.println("no.");
@@ -259,6 +267,7 @@ class main{
 					if(ans.equals("perfume")){
 						System.out.println("Correct.");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
 					}
 					else{
 						System.out.println("No.");
@@ -310,6 +319,7 @@ class main{
 					if(ans.equals("Joe Jonas")){
 						System.out.println("Correct");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
 					}
 					else{
 						System.out.println("No.");
@@ -335,6 +345,7 @@ class main{
 					if(ans.equals("Taylor Lautner")){
 						System.out.println("Correct");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
 					}
 					else{
 						System.out.println("No.");
@@ -362,6 +373,7 @@ class main{
 					if(ans.equals("John Mayer")){
 						System.out.println("Correct");
 						//MEGAN: ADD POINTS
+						vec.elementAt(i).score++;
 					}
 					else{
 						System.out.println("No.");
@@ -400,7 +412,13 @@ class main{
 				}
 				continue;
 			}
-		}//end of while loop
+			}//end of for loop of 3
+		}//end of for for loop of 4
+	Hash H = new Hash();
+	vec.copyInto(H.table1);
+	Player wins = new Player();
+	wins = H.first_place();
+	System.out.println(wins.name);
 	}//end of main
 }//end of class (file)
 

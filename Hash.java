@@ -11,6 +11,12 @@ public class Hash {
 	private int table_size;
 	private int size;
 	private HashEntry[] table; //make hashentry class
+	public Player[] table1;
+	
+	public Hash(){
+		size = 0;
+		table_size = 0;
+	}
 
 	public Hash(int points) {
 		size = 0;
@@ -65,10 +71,10 @@ public class Hash {
 		size++;
 	}
 
-public HashEntry first_place() {
-	HashEntry winner = new HashEntry(); 
-	for (HashEntry name: table ) {
-		if (name.value > winner.value) winner = name; 
+public Player first_place() {
+	Player winner = new Player(); 
+	for (Player name: table1 ) {
+		if (name.score > winner.score) winner = name; 
 
 	}
 	return winner; 
